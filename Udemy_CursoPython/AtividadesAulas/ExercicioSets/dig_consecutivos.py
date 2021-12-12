@@ -17,23 +17,23 @@ def verificaMaior(lista):
 
 
 def ver_sequencia(lista):
+
+    def adicionarSequencia(atual, proximo):
+        if atual in sequencia:
+            sequencia.append(proximo)
+        else:
+            sequencia.append(atual)
+            sequencia.append(proximo)
+
     stg_seq = []
     sequencia = []
     listagem = [x for x in str(lista)]
     for indice, valor in enumerate(listagem):
         if indice < (len(listagem)-1):
             if int(valor)+1 == int(listagem[indice+1]):
-                if valor in sequencia:
-                    sequencia.append(listagem[indice + 1])
-                else:
-                    sequencia.append(valor)
-                    sequencia.append(listagem[indice+1])
+                adicionarSequencia(valor, listagem[indice + 1])
             elif int(valor) == 9 and int(listagem[indice+1]) == 0:
-                if valor in sequencia:
-                    sequencia.append(listagem[indice + 1])
-                else:
-                    sequencia.append(valor)
-                    sequencia.append(listagem[indice+1])
+                adicionarSequencia(valor, listagem[indice + 1])
             else:
                 if len(sequencia) > 0:
                     stg_seq.append([x for x in sequencia])
