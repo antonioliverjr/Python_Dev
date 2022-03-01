@@ -259,3 +259,5 @@ dmypy.json
 cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/jupyternotebooks,pycharm,python
+design-patterns-python/
+design-patterns-python/*

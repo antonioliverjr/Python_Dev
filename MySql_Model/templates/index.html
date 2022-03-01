@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>Projeto DIO - Model MySql</title>
+</head>
+<body>
+    <h1 class="text-center">Controle de Séries e Filmes</h1>
+    <h3 class="text-center">Modelagem de Dados MySql DIO</h3>
+    <div class="container">
+        <div class="col-md-12">
+            <table class="table text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Episódios</th>
+                        <th scope="col">Episódio Atual</th>
+                        <th scope="col">Visto por Último</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for model in models %}    
+                    <tr>
+                        <td>{{model.name}}</td>
+                        <td>{{model.type_name}}</td>
+                        <td>{{model.total_ep}}</td>
+                        <td>{{model.atual_ep}}</td>
+                        <td>{{model.last_view}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
