@@ -1,0 +1,26 @@
+sudo apt update
+sudo apt upgrade
+sudo reboot -f
+
+sudo apt install curl mlocate default-jdk -y
+
+wget https://dlcdn.apache.org/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2.tgz
+
+tar xvf spark-3.2.1-bin-hadoop3.2.tgz
+
+sudo mv spark-3.2.1-bin-hadoop3.2.tgz/ /opt/spark
+
+vim ~/.bashrc
+
+export SPARK_HOME=/opt/spark
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+
+source ~/.bashrc
+
+start-master.sh
+
+start-slave.sh spark://localhost:7077
+
+
+$ SPARK_HOME/sbin/stop-slave.sh
+$ SPARK_HOME/sbin/stop-master.sh
